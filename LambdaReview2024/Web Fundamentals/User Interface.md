@@ -51,3 +51,103 @@ ol is for ordered, something like a set of instructions that need to be followed
 
 
 ## Introduction to Cascading Stylesheets
+
+CSS stands for Cascading Style Sheets. It is a different language than HTML but it works with HTML.
+
+It allows us to add style and layout to web pages.
+
+* style and link elements
+
+Before we add CSS to our web page, we need to inform the browser that what it's reading is in fact CSS.
+
+We can tell the browser that through HTML elements known as style and link elements. These elements will go between the head tags as it is not necessary data we need to appear on the screen.
+
+Two ways to include CSS in our HTML:
+
+1. Writing CSS between style tags.
+2. Using an external CSS file and using the **link** element. These include two attributes: **rel** and **href**.
+
+* rel will refer to the type of file we are linking. In this case: stylesheet
+* href will refer to the location of the file on your computer or file name.
+
+
+## Class 1 - User Interface Notes
+
+
+### 4 step approach to problem solving
+
+* Understand - figure out what you're trying to accomplish
+* Plan - Device a plan/pseudo-code
+* Test it - Once you have an idea- try it and keep trying until it works
+* Review - Check if the solution works and verify
+
+
+
+### HTML
+
+Semantic Markup -- Meaningful code
+
+- nav
+- section
+- main
+- header
+- strong
+- h1 to h6
+- paragraph
+
+We want to use descriptive elements due to the following reasons:
+1. Accessibility - screen readers, etc.
+2. Next developer reading your code
+3. SEO: google, bing, yahoo - used to scan web pages for improving searches in the web.
+
+Presentational Markups -- Style and layout
+
+- div
+- span
+- hr
+- br
+
+```
+<header>
+    <h1> International Airport</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="home">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <img class="header-img" src="https://tk-asets.lambdaschool.com/4651ccd7-e862-4a74-b8e8-14887425bd76_international-airplane.png" alt="Airplane taking off">
+</header>
+
+<section>
+    <h2>Fly with us</h2>
+
+    <p>orem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique ad</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique ad</p>
+
+    <button>Book A Flight</button>
+</section>
+<section>
+    <h2>Plan Your Flight</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique ad</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique ad</p>
+</section>
+
+<footer>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Flights</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+</footer>
+
+```
