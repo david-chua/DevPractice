@@ -143,8 +143,9 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
+/*
 // Destructuring
-const book = getBook(2);
+const book = getBook(3);
 console.log(book);
 
 // const title = book.title;
@@ -160,6 +161,106 @@ console.log(genres);
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
-const [primaryGenre, secondaryGenre] = genres;
+// const [primaryGenre, secondaryGenre] = genres;
 
-console.log(primaryGenre, secondaryGenre);
+// console.log(primaryGenre, secondaryGenre);
+
+// REST/Spread Operator
+
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+const newGenres = [...genres, "epic fantasy"];
+console.log(newGenres);
+
+const updatedBook = {
+  ...book,
+  moviePublicationDate: "2001-12-19",
+  pages: 1210,
+};
+console.log(updatedBook);
+
+// Template literals
+
+const summary = `${title}, a {page}-page long book, was written by ${author} and published in ${
+  publicationDate.split("-")[0]
+}`;
+console.log(summary);
+
+// Ternaries instead of if/else statements
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+console.log(pagesRange);
+
+// Arrow functions
+
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));
+
+// Short-circuiting and logial operators
+
+console.log(true && "Some string");
+console.log(false && "Some String");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// falsy values: 0, '', null, undefined
+console.log("jonas" && "Some string");
+console.log(0 && "Some string!");
+
+// or operators - short circuits when first operand is true
+console.log(true || "Some string");
+console.log(false || "Some string!");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+console.log(spanishTranslation);
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "No data"; // if there's no data, reviews Count becomes falsy
+console.log(countWrong);
+
+const count = book.reviews.librarything.reviewsCount ?? "no data";
+console.log(count);
+
+Optional chaining
+
+function getTotalReviewcount(book) {
+  const goodread = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodread + librarything;
+}
+
+console.log(getTotalReviewcount(book));
+
+*/
+
+// 3 functional array methods: map, filter, reduce
+// Array map method
+
+const books = getBooks();
+
+// Sample map method
+// const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+// console.log(x); // [2,4,6,8,10]
+
+const titles = books.map((book) => book.title);
+
+console.log(titles);
+
+function getTotalReviewcount(book) {
+  const goodread = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodread + librarything;
+}
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewcount(book),
+}));
+
+console.log(essentialData);
