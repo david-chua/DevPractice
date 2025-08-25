@@ -264,3 +264,8 @@ const essentialData = books.map((book) => ({
 }));
 
 console.log(essentialData);
+
+/// Filter method
+const longBooks = books.filter((book) => book.pages > 500);
+
+console.log(longBooks);
