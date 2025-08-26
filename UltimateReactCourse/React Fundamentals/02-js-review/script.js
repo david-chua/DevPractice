@@ -266,6 +266,31 @@ const essentialData = books.map((book) => ({
 console.log(essentialData);
 
 /// Filter method
-const longBooks = books.filter((book) => book.pages > 500);
+const longBooks = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
 
 console.log(longBooks);
+
+const adventureBooks = books
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
+console.log(adventureBooks);
+
+// reduce method
+// Goal of reduce is to boil return value into 1 number
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+console.log(pagesAllBooks);
+
+// sort an array
+// This changes the original array.
+const arr = [3, 7, 1, 9, 6];
+
+// using .slice, it creates a copy of the array so we don't have to touch the original array.
+const sortedArray = arr.slice().sort((a, b) => b - a);
+
+console.log(sortedArray);
+console.log(arr);
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+console.log(sortedByPages);
