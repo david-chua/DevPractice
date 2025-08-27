@@ -316,7 +316,6 @@ const booksAfterUpdate = booksAfterDelete.map((book) =>
 );
 console.log(booksAfterUpdate);
 
-
 // Working with Promises
 
 // fetch("https://jsonplaceholder.typicode.com/todos").then((res) => res.json()).then((data) => console.log(data));
@@ -328,7 +327,6 @@ async function getTodos() {
 
   return data;
 }
-
 
 const todos = getTodos();
 console.log(todos);
