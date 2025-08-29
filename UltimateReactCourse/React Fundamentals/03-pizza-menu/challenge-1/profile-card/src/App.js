@@ -8,31 +8,35 @@ const data = {
 
 const skills = [
   {
-    skill: "HTML + CSS",
-    emoji: "💪",
-    background: "blue",
+    skill: "HTML+CSS",
+    level: "advanced",
+    color: "#2662EA",
   },
   {
     skill: "JavaScript",
-    emoji: "💪",
-    background: "yellow",
+    level: "advanced",
+    color: "#EFD81D",
   },
   {
     skill: "Web Design",
-    emoji: "💪",
-    background: "green",
+    level: "advanced",
+    color: "#C3DCAF",
   },
   {
-    skill: "Git and Github",
-    emoji: "👌",
-    background: "red",
+    skill: "Git and GitHub",
+    level: "intermediate",
+    color: "#E84F33",
   },
   {
     skill: "React",
-    emoji: "💪",
-    background: "lightblue",
+    level: "advanced",
+    color: "#60DAFB",
   },
-  { skill: "Svelte", emoji: "👶", background: "orangered" },
+  {
+    skill: "Svelte",
+    level: "beginner",
+    color: "#FF3B00",
+  },
 ];
 
 function Avatar() {
@@ -60,11 +64,15 @@ function SkillList() {
 }
 
 function Skill(props) {
-  const { background, skill, emoji } = props.skill;
+  const { color, skill, level } = props.skill;
   return (
-    <div className="skill" style={{ backgroundColor: background }}>
+    <div className="skill" style={{ backgroundColor: color }}>
       <span>{skill}</span>
-      <span>{emoji}</span>
+      <span>
+        {level === "beginner" && "👶"}
+        {level === "intermediate" && "👌"}
+        {level === "advancd" && "💪"}
+      </span>
     </div>
   );
 }
