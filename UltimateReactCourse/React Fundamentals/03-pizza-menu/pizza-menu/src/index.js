@@ -105,7 +105,7 @@ function Pizza(props) {
   //   if (soldOut) return null;
 
   return (
-    <li className={`pizza ${soldOut ? 'sold-out': }`}>
+    <li className={`pizza ${soldOut ? "sold-out" : ""}`}>
       <img src={photoName} alt={name} />
       <div>
         <h3>{name}</h3>
